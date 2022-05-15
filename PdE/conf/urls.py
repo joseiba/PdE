@@ -18,15 +18,19 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 
-
 from conf import settings
-"""user urls"""
-from conf.users.views import home
+
+from apps.users.views import home
+from apps.career.views import list_careers
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="index"),
+
+    #Careers urls
+    path('career/list', list_careers, name="list_careers"),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

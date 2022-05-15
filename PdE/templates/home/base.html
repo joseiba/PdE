@@ -39,11 +39,18 @@
     <div class="navigation-page">
       {% include "home/navigation.html" %}
     </div>
-    {% endblock navigation %}
+    {% endblock navigation %} 
+    <div class="page-wrapper">
+      <div class="page-body">
+        <div class="container-xl">
+          {% block content %}
+          
+          {% endblock content %}
+          </div>
+        </div>
+    </div>
 
-    {% block content %}
-      <!-- {{ content }} -->
-    {% endblock content %}
+  </div>    
 
     {% block footer %}
       <div class="footer-page">

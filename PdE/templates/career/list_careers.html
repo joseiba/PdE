@@ -1,0 +1,38 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %} Carreras {% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="container-xl" style="margin-top: 0.5rem;">
+    <!-- Page title -->
+    <div class="page-header d-print-none">
+      <div class="row g-2 align-items-center">
+        <div class="col">
+            <!-- Page pre-title -->
+            <div class="page-pretitle">
+              Carreras
+            </div> 
+            <h2 class="page-title">
+              Carreras
+            </h2>
+          </div>
+        <!-- Page title actions -->
+        <div class="col-12 col-md-auto ms-auto d-print-none">
+          <div class="btn-list">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+{{ block.super }}
+{% endblock javascripts %}
