@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from conf import settings
 
 from apps.users.views import home
-from apps.career.views import list_careers
+from apps.career.views import list_careers, add_careers
 
 
 urlpatterns = [
@@ -30,6 +30,7 @@ urlpatterns = [
 
     #Careers urls
     path('career/list', list_careers, name="list_careers"),
+    path('career/add', add_careers, name="add_careers"),
 
 ]
 
