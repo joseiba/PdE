@@ -9,8 +9,8 @@ class CareerForm(forms.ModelForm):
         model = Career
         fields = '__all__'
         widget = {
-            'name' : forms.TextInput(attrs={'class':'form-control','autocomplete': 'off',
-                'name': 'name', 'placeholder': 'Nombre de la Carrera', 'type':'text','required': 'required'}),
-            'desciption' : forms.Textarea(attrs={'class':'','autocomplete': 'off',
-                'name': 'desciption', 'placeholder': 'Descripcion',}),
+            'name' : forms.TextInput(attrs={'id':'name','autocomplete': 'off',
+                'name': 'name', 'placeholder': 'Nombre de la Carrera', 'type':'text','class':'form-control', 'required': 'required'}),
+            'description' : forms.Textarea(attrs={'class':'','autocomplete': 'off',
+                'name': 'description', 'placeholder': 'Descripcion',}),
         }

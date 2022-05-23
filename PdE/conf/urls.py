@@ -21,16 +21,20 @@ from django.conf.urls.static import static
 from conf import settings
 
 from apps.users.views import home
-from apps.career.views import list_careers, add_careers
+from apps.career.views import list_careers, add_careers, edit_careers, list_semester_career
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="index"),
 
-    #Careers urls
+    #Careers url's
     path('career/list', list_careers, name="list_careers"),
     path('career/add', add_careers, name="add_careers"),
+    path('career/edit/<int:id>', edit_careers, name="edit_careers"),
+
+    #Semester url's
+    path('career=<int:id>/semester/list', list_semester_career, name="list_semester_career"),
 
 ]
 

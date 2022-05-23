@@ -1,7 +1,7 @@
 {% extends "home/base.html" %}
 {% load static %}
 
-{% block title %} Carreras {% endblock title %}
+{% block title %} Semestres {% endblock title %}
 
 {% block stylesheets %}
 {{ block.super }}
@@ -86,10 +86,6 @@
     transform: translateY(-10px);
     transition: all 0.6s;
   }
-
-  a:hover{
-    text-decoration: none;
-  }
 </style>
 {% endblock stylesheets %}
 
@@ -100,39 +96,18 @@
     <div class="row g-2 align-items-center">
       <div class="col">
         <h2 class="page-title">
-          Carreras
+          Semestres
         </h2>
       </div>
     </div>
   </div>
 
   <div class="row row-cards">
-    {% if count > 0 %}
-    {% for career in page_obj  %}
-    <div class="col-md-6 col-lg-3">
-      <div class="card itemsAdded">
-        <div class="card-body p-4 text-center">
-          <div class="icon-wrapper">
-            <a href="{% url 'list_semester_career' career.id %}">
-              <i class="ti ti-folder-x" title="Agregar Semestres" data-bs-toggle="tooltip">
-              </i>
-            </a>           
-          </div>
-          <div class="text-uppercase project-name">
-            <h3>{{ career.name }} <i class="ti ti-edit" title="Editar" data-bs-toggle="tooltip" 
-              onclick="abrir_modal_edicion('/career/edit/' + '{{career.id}}' );"></i></h3>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-    {% endif %}
     <div class="col-md-6 col-lg-3">
       <div class="card items">
         <div class="card-body p-4 text-center">
           <div class="icon-wrapper">
-            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip"
-              onclick="abrir_modal_creacion('/career/add')">
+            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip">
             </i>
           </div>
           <div class="text-uppercase project-name">
