@@ -40,7 +40,7 @@ class Semester(models.Model):
             ('view_semester', 'Listar Semestre'))
 
     def __str__(self):
-        """Format name career"""
+        """Format name Semester"""
         return '{0}'.format(self.name)
 
 

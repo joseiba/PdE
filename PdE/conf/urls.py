@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 from conf import settings
 
 from apps.users.views import home
-from apps.career.views import list_careers, add_careers, edit_careers, list_semester_career
+from apps.career.views import (list_careers, add_careers, edit_careers, list_semester_career, 
+add_semester_career, edit_semester_career)
 
 
 urlpatterns = [
@@ -35,6 +36,8 @@ urlpatterns = [
 
     #Semester url's
     path('career=<int:id>/semester/list', list_semester_career, name="list_semester_career"),
+    path('career=<int:id>/semester/add', add_semester_career, name="add_semester_career"),
+    path('career/semester/edit/<int:id>', edit_semester_career, name="edit_semester_career"),
 
 ]
 
