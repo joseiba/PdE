@@ -11,7 +11,7 @@
     font-size: 0.85rem;
     display: block;
     margin-top: 5px;
-}
+  }
 </style>
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
@@ -24,20 +24,20 @@
       <div class="modal-body">
         <div class="row mb-3 align-items-end">
           <div class="col">
-            <label class="form-label" for="name">Nombre <i class="ti ti-info-circle" title="Este campo es requerido" 
-              data-bs-toggle="tooltip" style="color: red;"></i></label>
-              <input autocomplete="off" id="name" name="name" placeholder="Nombre de la Carrera" type="text"
+            <label class="form-label" for="name">Nombre <i class="ti ti-info-circle" title="Este campo es requerido"
+                data-bs-toggle="tooltip" style="color: red;"></i></label>
+            <input autocomplete="off" id="name" name="name" placeholder="Nombre de la Carrera" type="text"
               class="form-control" value="{{ career.name }}" required>
+          </div>
+          <div>
+            <label class="form-label">Descripcion</label>
+            <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">{{ career.description|default_if_none:'Descripcion' }}</textarea>
+          </div>
         </div>
-        <div>
-          <label class="form-label">Descripcion</label>
-          <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">{{ career.description }}</textarea>
+        <div class="modal-footer">
+          <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Editar</button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Editar</button>
-      </div>
     </form>
   </div>
 </div>
@@ -53,10 +53,10 @@
       messages: {
         name: {
           required: "Este campo es requerido",
-        },                     
+        },
       }
     });
 
   });
 </script>
-<script src="{% static 'project_static/plugins/js/tabler.min.js' %}" ></script>
+<script src="{% static 'project_static/plugins/js/tabler.min.js' %}"></script>

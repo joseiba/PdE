@@ -11,7 +11,7 @@
     font-size: 0.85rem;
     display: block;
     margin-top: 5px;
-}
+  }
 </style>
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
@@ -24,16 +24,22 @@
       <div class="modal-body">
         <div class="row mb-3 align-items-end">
           <div class="col">
-            <label class="form-label" for="name">Nombre <i class="ti ti-info-circle" title="Este campo es requerido" 
-              data-bs-toggle="tooltip" style="color: red;"></i></label>
-            <input autocomplete="off" id="name" name="name" placeholder="Nombre del Semestre" type="text" value="{{ semester.name }}"
-              class="form-control" required>
+            <label class="form-label" for="name">Nombre <i class="ti ti-info-circle" title="Este campo es requerido"
+                data-bs-toggle="tooltip" style="color: red;"></i></label>
+            <input autocomplete="off" id="name" name="name" placeholder="Nombre del Semestre" type="text"
+              value="{{ semester.name }}" class="form-control" required>
           </div>
         </div>
         <div>
           <label class="form-label">Descripcion</label>
-          <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">{{ semester.description }}  </textarea>
-        </div>    
+          <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">
+            {% if semester.description == None %}
+              Descripcion
+            {% else %}
+              {{ semester.description }}  
+            {% endif %}    
+          </textarea>
+        </div>
       </div>
       <input type="hidden" name="id_career" value="{{ semester.id_career.id }}">
       <div class="modal-footer">
@@ -55,10 +61,10 @@
       messages: {
         name: {
           required: "Este campo es requerido",
-        },                     
+        },
       }
     });
 
   });
 </script>
-<script src="{% static 'project_static/plugins/js/tabler.min.js' %}" ></script>
+<script src="{% static 'project_static/plugins/js/tabler.min.js' %}"></script>

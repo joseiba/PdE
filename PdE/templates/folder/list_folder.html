@@ -108,7 +108,7 @@
 
   <div class="row row-cards">
     {% if count > 0 %}
-    {% for semester in page_obj %}
+    {% for folder in page_obj %}
     <div class="col-md-6 col-lg-3">
       <div class="card itemsAdded">
         <div class="card-body p-4 text-center">
@@ -119,8 +119,7 @@
             </a>
           </div>
           <div class="text-uppercase project-name">
-            <h3>{{ semester.name }} <i class="ti ti-edit" title="Editar" data-bs-toggle="tooltip" 
-              onclick="abrir_modal_edicion('/career/semester/edit/' + '{{ semester.id }}');"></i></h3>
+            <h3>{{ folder.name }} <i class="ti ti-edit" title="Editar" data-bs-toggle="tooltip"></i></h3>
           </div>
         </div>
       </div>
@@ -131,8 +130,7 @@
       <div class="card items">
         <div class="card-body p-4 text-center">
           <div class="icon-wrapper">
-            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip"
-              onclick="abrir_modal_creacion('/career=' + '{{ id }}' + '/semester/add');">
+            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip">
             </i>
           </div>
           <div class="text-uppercase project-name">

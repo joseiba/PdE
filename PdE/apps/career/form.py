@@ -1,4 +1,3 @@
-from tkinter import Widget
 from django import forms
 
 from apps.career.models import Career, Semester
