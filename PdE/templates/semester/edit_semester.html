@@ -16,35 +16,43 @@
 <div class="modal-dialog modal-dialog-centered" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title">Editar Carrera</h5>
+      <h5 class="modal-title">Editar Semestre</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
-    <form action="{% url 'edit_careers' career.id %}" method="POST" id="form_add">
+    <form action="{% url 'edit_semester_career' semester.id %}" method="POST" id="form_edit">
       {% csrf_token %}
       <div class="modal-body">
         <div class="row mb-3 align-items-end">
           <div class="col">
             <label class="form-label" for="name">Nombre <i class="ti ti-info-circle" title="Este campo es requerido"
                 data-bs-toggle="tooltip" style="color: red;"></i></label>
-            <input autocomplete="off" id="name" name="name" placeholder="Nombre de la Carrera" type="text"
-              class="form-control" value="{{ career.name }}" required>
-          </div>
-          <div>
-            <label class="form-label">Descripcion</label>
-            <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">{{ career.description|default_if_none:'Descripcion' }}</textarea>
+            <input autocomplete="off" id="name" name="name" placeholder="Nombre del Semestre" type="text"
+              value="{{ semester.name }}" class="form-control" required>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
-          <button type="submit" class="btn btn-primary">Editar</button>
+        <div>
+          <label class="form-label">Descripcion</label>
+          <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">
+            {% if semester.description == None %}
+              Descripcion
+            {% else %}
+              {{ semester.description }}  
+            {% endif %}    
+          </textarea>
         </div>
+      </div>
+      <input type="hidden" name="id_career" value="{{ semester.id_career.id }}">
+      <div class="modal-footer">
+        <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
     </form>
   </div>
 </div>
 
 <script>
   $(document).ready(function () {
-    $("#form_add").validate({
+    $("#form_edit").validate({
       rules: {
         name: {
           required: true,
