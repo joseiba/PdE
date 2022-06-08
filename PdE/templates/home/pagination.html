@@ -11,7 +11,7 @@
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <polyline points="15 6 9 12 15 18" />
                     </svg>
-                    prev
+                    anterior
                 </a>
                 {% endif %}
 
@@ -27,7 +27,7 @@
             <li class="page-item">
                 {% if page_obj.has_next %}
                 <a class="page-link" href="?page={{ page_obj.next_page_number }}">
-                    next
+                    siguiente
                     <!-- Download SVG icon from http://tabler-icons.io/i/chevron-right -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                         stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -41,16 +41,3 @@
         </ul>
     </div>
 </ul>
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <span class="page-link">Previous</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active" aria-current="page">
-        <span class="page-link">2</span>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
