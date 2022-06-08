@@ -113,8 +113,8 @@
       <div class="card itemsAdded">
         <div class="card-body p-4 text-center">
           <div class="icon-wrapper">
-            <a href="">
-              <i class="ti ti-folder-x" title="Agregar carpeta" data-bs-toggle="tooltip">
+            <a href="{{ folder.link }}" target="_blank">
+              <i class="ti ti-folder-x" title="{{ folder.description|default_if_none:'Agregar una descripción'}}" data-bs-toggle="tooltip">
               </i>
             </a>
           </div>
@@ -130,7 +130,8 @@
       <div class="card items">
         <div class="card-body p-4 text-center">
           <div class="icon-wrapper">
-            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip">
+            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip"
+            onclick="abrir_modal_creacion('/career/semester=' + '{{ id }}' + '/folder/add');">
             </i>
           </div>
           <div class="text-uppercase project-name">

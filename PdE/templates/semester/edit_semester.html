@@ -33,11 +33,7 @@
         <div>
           <label class="form-label">Descripcion</label>
           <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">
-            {% if semester.description == None %}
-              Descripcion
-            {% else %}
-              {{ semester.description }}  
-            {% endif %}    
+            {{ semester.description }}  
           </textarea>
         </div>
       </div>

@@ -41,8 +41,8 @@ urlpatterns = [
     path('career/semester/edit/<int:id>', edit_semester_career, name="edit_semester_career"),
 
     #Folder url's
-    path('career/semester=<int:id>/list', list_folder_semester, name="list_folder_semester"),
-    path('career/semester=<int:id>/add', add_folder_semester, name="add_folder_semester"),
+    path('career/semester=<int:id>/folder/list', list_folder_semester, name="list_folder_semester"),
+    path('career/semester=<int:id>/folder/add', add_folder_semester, name="add_folder_semester"),
 
 ]
 
