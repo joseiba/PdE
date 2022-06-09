@@ -23,7 +23,7 @@ from conf import settings
 from apps.users.views import home
 from apps.career.views import (list_careers, add_careers, edit_careers, list_semester_career, 
 add_semester_career, edit_semester_career)
-from apps.folder.views import list_folder_semester, add_folder_semester
+from apps.folder.views import list_folder_semester, add_folder_semester, edit_folder_semester
 
 
 urlpatterns = [
@@ -43,6 +43,7 @@ urlpatterns = [
     #Folder url's
     path('career/semester=<int:id>/folder/list', list_folder_semester, name="list_folder_semester"),
     path('career/semester=<int:id>/folder/add', add_folder_semester, name="add_folder_semester"),
+    path('career/semester=<int:id>/folder/edit', edit_folder_semester, name="edit_folder_semester"),
 
 ]
 

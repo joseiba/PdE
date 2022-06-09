@@ -31,7 +31,11 @@
           </div>
           <div>
             <label class="form-label">Descripcion</label>
-            <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">{{ career.description }}</textarea>
+            {% if career.description != None %}
+              <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">{{career.description}}</textarea>
+            {% else %}
+              <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off"></textarea>
+            {% endif %}
           </div>
         </div>
         <div class="modal-footer">

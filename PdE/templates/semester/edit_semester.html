@@ -32,9 +32,14 @@
         </div>
         <div>
           <label class="form-label">Descripcion</label>
-          <textarea class="form-control" name="description" placeholder="Descripcion" autocomplete="off">
-            {{ semester.description }}  
-          </textarea>
+          {% if semester.description != None %}
+          <textarea class="form-control" name="description" placeholder="Descripcion"
+            autocomplete="off">{{semester.description}}</textarea>
+          {% else %}
+          <textarea class="form-control" name="description" placeholder="Descripcion"
+            autocomplete="off"></textarea>
+          {% endif %}
+
         </div>
       </div>
       <input type="hidden" name="id_career" value="{{ semester.id_career.id }}">

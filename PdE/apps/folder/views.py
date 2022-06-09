@@ -17,7 +17,6 @@ def list_folder_semester(request,id):
 
 
 def add_folder_semester(request, id):
-    print(id)
     form = FolderForm
     if request.method == 'POST':
         form = FolderForm(request.POST)
@@ -26,6 +25,18 @@ def add_folder_semester(request, id):
             messages.success(request, 'Se ha agregado correctamente!')
             return redirect('/career/semester=' + str(id)+ '/folder/list')
     context = {'form': form, 'id': id}
-    print("llego aca "+ str(id))
     return render(request, "folder/add_folder.html", context)
 
+def edit_folder_semester(request, id):
+    folder = Folder.objects.get(id=id)
+    form = FolderForm(instance=folder)
+    if request.method == 'POST':
+        form = FolderForm(request.POST, instance=folder)
+        if not form.has_changed():
+            return redirect('/career/semester=' + str(folder.id_semester.id)+ '/folder/list')
+        if form.is_valid():
+            folder = form.save(commit=False)
+            folder.save()
+            return redirect('/career/semester=' + str(folder.id_semester.id)+ '/folder/list')
+    context = {'form': form, 'folder': folder}
+    return render(request, 'folder/edit_folder.html', context)   
