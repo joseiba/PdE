@@ -111,7 +111,7 @@
     {% for folder in page_obj %}
     <div class="col-md-6 col-lg-3">
       <div class="card itemsAdded">
-        <div class="card-body p-4 text-center">
+        <div class="card-body text-center">
           <div class="icon-wrapper">
             <a href="{{ folder.link }}" target="_blank">
               <i class="ti ti-folders" title="{{ folder.description|default_if_none:'Agregar una descripción en editar'}}" data-bs-toggle="tooltip">
@@ -129,7 +129,7 @@
     {% endif %}
     <div class="col-md-6 col-lg-3">
       <div class="card items">
-        <div class="card-body p-4 text-center">
+        <div class="card-body text-center">
           <div class="icon-wrapper">
             <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip"
             onclick="abrir_modal_creacion('/career/semester=' + '{{ id }}' + '/folder/add');">

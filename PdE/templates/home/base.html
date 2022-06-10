@@ -16,63 +16,69 @@
   <title>PdE | {% block title %}{% endblock %}</title>
 
   {% block stylesheets %}
-  
-    <link rel="stylesheet" href="{% static 'project_static/plugins/css/tabler.min.css' %}">
-    <link rel="stylesheet" href="{% static 'project_static/plugins/css/tabler-flags.min.css' %}">
-    <link rel="stylesheet" href="{% static 'project_static/plugins/css/tabler-vendors.min.css' %}">
-    <link rel="stylesheet" href="{% static 'project_static/other/css/tooltip.css' %}">
-    <link href="{% static 'project_static/fontawesome/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'project_static/fontawesome/css/brands.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'project_static/fontawesome/css/solid.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'project_static/fontawesome/css/regular.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'project_static/tabler/iconfont/tabler-icons.min.css' %}" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="{% static 'project_static/plugins/css/tabler.min.css' %}">
+  <link rel="stylesheet" href="{% static 'project_static/plugins/css/tabler-flags.min.css' %}">
+  <link rel="stylesheet" href="{% static 'project_static/plugins/css/tabler-vendors.min.css' %}">
+  <link rel="stylesheet" href="{% static 'project_static/other/css/tooltip.css' %}">
+  <link href="{% static 'project_static/fontawesome/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'project_static/fontawesome/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'project_static/fontawesome/css/solid.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'project_static/fontawesome/css/regular.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'project_static/tabler/iconfont/tabler-icons.min.css' %}" rel="stylesheet" type="text/css">
+
+  <style>
+    .page-body {
+      margin-top: 0.5rem;
+    }
+  </style>
   {% endblock stylesheets %}
   <!-- Custom Theme Style -->
   {% endblock head %}
 </head>
 
-<body>  
+<body>
   {% block body %}
   <div class="page">
     {% block header %}
-      <div class="header-page">
-        {% include "home/header.html" %}
-      </div>
+    <div class="header-page">
+      {% include "home/header.html" %}
+    </div>
     {% endblock header %}
 
     {% block navigation %}
     <div class="navigation-page">
       {% include "home/navigation.html" %}
     </div>
-    {% endblock navigation %} 
+    {% endblock navigation %}
     <div class="page-wrapper">
       <div class="page-body">
         <div class="container-xl">
           {% block content %}
-          
+
           {% endblock content %}
-          </div>
         </div>
+      </div>
     </div>
 
-  </div>    
+  </div>
 
-    {% block footer %}
-      <div class="footer-page">
-        {% include "home/footer.html" %}
-      </div>
-    {% endblock footer %}
+  {% block footer %}
+  <div class="footer-page">
+    {% include "home/footer.html" %}
+  </div>
+  {% endblock footer %}
   </div>
 
   {% block javascripts %}
-    <!-- Libs js -->
-  <script src="{% static 'project_static/plugins/libs/apexcharts/plugins/apexcharts.min.js' %}" ></script>
-  <script src="{% static 'project_static/plugins/libs/jsvectormap/plugins/js/jsvectormap.min.js' %}" ></script>
-  <script src="{% static 'project_static/plugins/libs/jsvectormap/plugins/maps/world.js' %}" ></script>
-  <script src="{% static 'project_static/plugins/libs/jsvectormap/plugins/maps/world-merc.js' %}" ></script>
+  <!-- Libs js -->
+  <script src="{% static 'project_static/plugins/libs/apexcharts/plugins/apexcharts.min.js' %}"></script>
+  <script src="{% static 'project_static/plugins/libs/jsvectormap/plugins/js/jsvectormap.min.js' %}"></script>
+  <script src="{% static 'project_static/plugins/libs/jsvectormap/plugins/maps/world.js' %}"></script>
+  <script src="{% static 'project_static/plugins/libs/jsvectormap/plugins/maps/world-merc.js' %}"></script>
   <!-- Tabler Core -->
-  <script src="{% static 'project_static/plugins/js/tabler.min.js' %}" ></script>
-  <script src="{% static 'project_static/plugins/js/demo.min.js' %}" ></script>
+  <script src="{% static 'project_static/plugins/js/tabler.min.js' %}"></script>
+  <script src="{% static 'project_static/plugins/js/demo.min.js' %}"></script>
   <script src="{% static 'project_static/fontawesome/js/all.min.js' %}"></script>
   <script src="{% static 'project_static/other/js/main.js' %}"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
