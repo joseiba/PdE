@@ -1,12 +1,17 @@
 {% load static %}
 
+<style>
+ .index-class:hover{
+  text-decoration: none;
+ }
+</style>
 <header class="navbar navbar-expand-md navbar-light d-print-none">
     <div class="container-xl">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-        <a href="{% url 'index' %}">
+        <a class="index-class" href="{% url 'index' %}">
           <!-- <img src="{% static 'project_static/other/img/logooficial.png' %}" style=" max-width: 59%;" alt="PdE"/> -->
           <h3 style="color: #206bc4; font-family: sans-serif; font-size: 16px;">PdE</h3>
         </a>

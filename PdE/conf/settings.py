@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-#ja!q#gh90apoww)&ao_aykh*2466(zh!+q-=uowi(z!!u(8_('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.users',
     'apps.career',
-    'apps.folder'
-]
+    'apps.folder',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
