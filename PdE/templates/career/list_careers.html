@@ -1,0 +1,170 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block title %} Carreras {% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+<style>
+  .container {
+    width: 800px;
+    height: 250px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+  }
+
+  .items {
+    border-radius: 5px;
+    display: grid;
+    cursor: pointer;
+    border: 4px dotted gray;
+    transition: all 0.6s;
+    border-radius: 29px;
+  }
+
+  .itemsAdded {
+    border-radius: 5px;
+    display: grid;
+    cursor: pointer;
+    border: 3px solid gray;
+    transition: all 0.6s;
+    border-radius: 29px;
+  }
+
+  .icon-wrapper,
+  .project-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-wrapper i {
+    font-size: 136px;
+    color: #7b84976e;
+    transform: translateY(0px);
+    transition: all 0.6s;
+  }
+
+  .icon-wrapper {
+    align-self: end;
+  }
+
+  .project-name {
+    align-self: start;
+  }
+
+  .project-name p {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #000000a3;
+    transform: translateY(0px);
+    transition: all 0.5s;
+  }
+
+  .items:hover {
+    border: 3px solid lightblue;
+  }
+
+  .project-name p:hover {
+
+    transform: translateY(-10px);
+  }
+
+  .icon-wrapper i:hover {
+    transform: translateY(-10px);
+    transition: all 0.6s;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="container-xl">
+  <!-- Page title -->
+  <div class="page-header d-print-none" style="margin-top: 0; margin-bottom: 1rem;">
+    <div class="row g-2 align-items-center">
+      <div class="col">
+        <h2 class="page-title">
+          Carreras
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cards">
+    {% if count > 0 %}
+    {% for career in page_obj  %}
+    <div class="col-md-6 col-lg-3">
+      <div class="card itemsAdded">
+        <div class="card-body text-center">
+          <div class="icon-wrapper">
+            <a href="{% url 'list_semester_career' career.id %}">
+              <i class="ti ti-folders" title="Agregar Semestres" data-bs-toggle="tooltip">
+              </i>
+            </a>           
+          </div>
+          <div class="text-uppercase project-name">
+            <h3>{{ career.name }} <i class="ti ti-edit" title="Editar" data-bs-toggle="tooltip" 
+              onclick="abrir_modal_edicion('/career/edit/' + '{{career.id}}' );"></i></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="col-md-6 col-lg-3">
+      <div class="card items">
+        <div class="card-body text-center">
+          <div class="icon-wrapper">
+            <i class="ti ti-folder-plus" title="Agregar" data-bs-toggle="tooltip"
+              onclick="abrir_modal_creacion('/career/add')">
+            </i>
+          </div>
+          <div class="text-uppercase project-name">
+            <h3>Agregar</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% block pagination %}
+  {% include 'home/pagination.html' %}
+  {% endblock pagination %}
+</div>
+
+<div class="modal modal-blur fade" id="creacion" role="dialog">
+
+</div>
+
+<div class="modal modal-blur fade" id="edicion" role="dialog">
+
+</div>
+<div class="modal modal-blur fade" id="eliminacion" role="dialog">
+
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+{{ block.super }}
+
+<script>
+  $
+</script>
+{% endblock javascripts %}
